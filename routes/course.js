@@ -1,15 +1,16 @@
-function createCourseRoutes(app) {
-app.get("/course/preview",function(req,res){
+ const {Router} = require('express');
+ const courseRouter = Router();
+
+ courseRouter.get("/preview",function(req,res){
     res.json({
      message:"preview endpoint"
     })
 })
 
-app.post("/courses/purchases",function(req,res){
+    courseRouter.post("/purchases",function(req,res){
     res.json({
      message:"purchase endpoint"
     })
 })
-}
 
-module.exports = {createCourseRoutes:createCourseRoutes}
+module.exports ={courseRouter:courseRouter};

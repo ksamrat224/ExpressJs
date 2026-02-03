@@ -1,23 +1,23 @@
-function createUserRoutes(app) {
-
-    app.post("/users/signup",function(req,res){
+const {Router} = require('express');
+const userRouter = Router();
+   
+userRouter.post("/signup",function(req,res){
         res.json({
          message:"sign up endpoint"
         })
     })
     
-    app.post("/users/signin",function(req,res){
+userRouter.post("/signin",function(req,res){
         res.json({
          message:"sign in endpoint"
         })
     })
-    
-    
-    app.post("/users/purchases",function(req,res){
+
+    userRouter.post("/purchases",function(req,res){
         res.json({
          message:"purchase endpoint"
         })
     })
-}
 
-module.exports = {createUserRoutes:createUserRoutes}
+
+module.exports ={userRouter:userRouter};
